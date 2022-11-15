@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "489391833174",
+    "project_id": "first-firebase-7ae4a",
+    "storage_bucket": "first-firebase-7ae4a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:489391833174:android:d2be0e274bd07846b9bbf7",
+        "android_client_info": {
+          "package_name": "com.example.rail_food"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "489391833174-tl3ihqf12jurf79sac069qrcc5htihon.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyxSmWiYL6WhJqHOwrXr4rHW1vbChhe94"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "489391833174-tl3ihqf12jurf79sac069qrcc5htihon.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
