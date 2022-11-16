@@ -15,7 +15,10 @@ class AccountPage extends StatefulWidget {
 }
 
 class _AccountPageState extends State<AccountPage> {
-  final firstNameController = new TextEditingController();
+  final pnrController =  TextEditingController();
+  final stationController =  TextEditingController();
+  final trainNumberController =  TextEditingController();
+
   
   @override
   Widget build(BuildContext context) {
@@ -125,8 +128,7 @@ class _AccountPageState extends State<AccountPage> {
 
               SizedBox(height: size.height*5/100,),
 
-
-
+               
                //terms and condition
                const Text.rich(
                  TextSpan(
@@ -145,6 +147,7 @@ class _AccountPageState extends State<AccountPage> {
                    ],
                  ),
                ),
+
             ],
           ),
         ),
