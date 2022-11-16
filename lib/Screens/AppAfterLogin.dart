@@ -24,7 +24,6 @@ class _HomeScreenState extends State<AppAfterLogin> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    final user = FirebaseAuth.instance.currentUser!;
 
     return Scaffold(
 
