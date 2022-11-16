@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter/services.dart';
 
 //text form box for signup and login page for
 Widget TextformfieldSignup(
@@ -158,7 +160,7 @@ Future addUserDetails(
   });
 }
 
-Widget Searchbar(controller, TextInputType, text, ) {
+Widget SearchbarforPNRandTrain(controller, hinttext, maxlen) {
   return Container(
     margin: const EdgeInsets.only(left: 10, right: 10),
       decoration: BoxDecoration(
@@ -174,14 +176,18 @@ Widget Searchbar(controller, TextInputType, text, ) {
               cursorColor: Colors.deepOrange[300],
               controller: controller,
               textInputAction: TextInputAction.done,
-              keyboardType: TextInputType,
+              keyboardType: TextInputType.number,
+              inputFormatters: [
+                FilteringTextInputFormatter.digitsOnly,
+                LengthLimitingTextInputFormatter(maxlen),
+              ],
               style: const TextStyle(
                 fontFamily: 'font',
                 color: Colors.white,
               ),
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                hintText: text,
+                hintText: hinttext,
                 hintStyle: const TextStyle(
                   fontFamily: 'font',
                   fontSize: 15,
@@ -232,5 +238,87 @@ Widget Searchbar(controller, TextInputType, text, ) {
             ),
           ),
         ],
-      ));
+      ),
+  );
+}
+
+
+
+
+Widget Searchbarforstation(controller, hinttext ){
+  return Container(
+    margin: const EdgeInsets.only(left: 10, right: 10),
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(25),
+      color: Colors.grey,
+    ),
+    height: 75,
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Expanded(
+          child: TextField(
+            cursorColor: Colors.deepOrange[300],
+            controller: controller,
+            textInputAction: TextInputAction.done,
+            keyboardType: TextInputType.text,
+            style: const TextStyle(
+              fontFamily: 'font',
+              color: Colors.white,
+            ),
+            decoration: InputDecoration(
+              contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+              hintText: hinttext,
+              hintStyle: const TextStyle(
+                fontFamily: 'font',
+                fontSize: 15,
+                color: Colors.white,
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(25),
+                borderSide: const BorderSide(
+                  color: Colors.grey,
+                  width: 2,
+                ),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(25),
+                borderSide: const BorderSide(
+                  color: Colors.grey,
+                ),
+              ),
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+          child: TextButton(
+            onPressed: (){},
+            style: TextButton.styleFrom(
+              foregroundColor: Colors.grey,
+            ),
+            child: Container(
+              height: 45,
+              width: 100,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+                color: Colors.deepOrange[300],
+              ),
+              child: const Center(
+                child: Text(
+                  'Search',
+                  style: TextStyle(
+                    fontFamily: 'font',
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
+    ),
+  );
 }
