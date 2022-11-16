@@ -118,12 +118,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       height: 80,
                       child: TabBarView(
                         children: [
-                          Searchbar(pnrController, TextInputType.number,
-                              "Enter PNR Number"),
-                          Searchbar(trainNumberController, TextInputType.number,
-                              "Enter Train Number"),
-                          Searchbar(stationController, TextInputType.name,
-                              "Enter Station Name"),
+                          SearchbarforPNRandTrain(pnrController, 'Enter PNR Number', 10),
+                          SearchbarforPNRandTrain(trainNumberController, 'Enter Train Number', 5),
+                          Searchbarforstation(stationController, 'Enter Station Name'),
                         ],
                       ),
                     ),
